@@ -1,0 +1,62 @@
+<h2 class="text-center">{{ isEditMode ? 'Edit employee' : 'Add employee' }}</h2>
+
+<div *ngIf="loading$ | async; else content" class="flex justify-center">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #content>
+  <div class="flex justify-center">
+    <mat-card class="max-w-[800px] w-[800px] p-5"
+              appearance="outlined">
+
+      <mat-card-content>
+        <form *ngIf="employeeForm" [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-3">
+          <mat-form-field appearance="fill" class="mb-4">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mb-4">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mb-4">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phoneNumber" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mb-4">
+            <mat-label>Office</mat-label>
+            <mat-select formControlName="office" required>
+              <mat-option *ngFor="let office of offices" [value]="office">
+                {{ office }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-label>Tags</mat-label>
+          <div class="flex flex-wrap gap-2">
+            <mat-chip-set>
+              <mat-chip *ngFor="let tag of this.tagService.tags | async" selectable>
+                {{ tag.name }}
+                <mat-checkbox
+                  [checked]="isTagSelected(tag.name)"
+                  (change)="toggleTagSelection(tag.name, $event.checked)">
+                </mat-checkbox>
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+
+          <div class="flex gap-5 mt-8">
+            <button (click)="goBack()" mat-fab extended>Back</button>
+            <button type="submit" mat-fab extended [disabled]="employeeForm.invalid">
+              {{ isEditMode ? 'Save Changes' : 'Create Employee' }}
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-template>
+

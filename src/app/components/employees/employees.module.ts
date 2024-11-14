@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {EmployeesComponent} from './employees.component';
-
 import {CommonModule} from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -18,12 +17,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatOption, MatSelect} from "@angular/material/select";
 import {EmployeesListComponent} from './employees-list/employees-list.component';
 import {EmployeeInfoComponent} from './employee-info/employee-info.component';
+import {EmployeeCreateOrEditFormComponent} from './employee-create-or-edit-form/employee-create-or-edit-form.component';
 
 @NgModule({
   declarations: [
     EmployeesComponent,
     EmployeesListComponent,
     EmployeeInfoComponent,
+    EmployeeCreateOrEditFormComponent
   ],
   exports: [
     EmployeesComponent
