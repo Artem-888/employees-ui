@@ -17,12 +17,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {MatOption, MatSelect} from "@angular/material/select";
 import {EmployeesListComponent} from './employees-list/employees-list.component';
+import {EmployeeInfoComponent} from './employee-info/employee-info.component';
 
 @NgModule({
   declarations: [
     EmployeesComponent,
     EmployeesListComponent,
-
+    EmployeeInfoComponent,
   ],
   exports: [
     EmployeesComponent

@@ -1,0 +1,65 @@
+<h2 class="text-center">Employee Information</h2>
+<div *ngIf="loading$ | async; else content" class="flex justify-center">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #content>
+  <div class="flex justify-center">
+    <mat-card *ngIf="this.employeeService.employee | async as employee"
+              class="max-w-[800px] w-[800px] p-5" appearance="outlined">
+
+      <mat-card-header>
+        <mat-card-title>
+          <div class="flex items-center gap-6 mb-4">
+            <p class="text-[30px]">
+              <mat-icon class="text-[30px] mr-3">person</mat-icon>
+            </p>
+            <p class="text-[30px]">
+              {{ employee.firstName }} {{ employee.lastName }}
+            </p>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <div class="flex items-center gap-6 mb-4">
+          <p class="text-[20px]">
+            <mat-icon class="text-[27px] mr-3">location_on</mat-icon>
+          </p>
+          <p class="text-[20px]">{{ employee.office }}</p>
+        </div>
+
+        <div class="flex items-center gap-6 mb-4">
+          <p class="text-[20px]">
+            <mat-icon class="text-[27px] mr-3">phone</mat-icon>
+          </p>
+          <p class="text-[20px]">{{ employee.phoneNumber }}</p>
+        </div>
+
+        <p class="text-[18px]">Tags:</p>
+        <mat-chip-set>
+          <mat-chip *ngFor="let tag of employee.tags; let i = index"
+                    [ngStyle]="{'background-color': getRandomColor(i)}">
+            {{ tag }}
+          </mat-chip>
+        </mat-chip-set>
+
+      </mat-card-content>
+
+      <mat-card-footer class="example-card-footer">
+        <div class="flex gap-5 mt-8">
+          <button (click)="navigate()" mat-fab extended>
+            Back
+          </button>
+          <button (click)="navigate(employee._id)" mat-fab extended>
+            Edit
+          </button>
+          <button (click)="deleteEmployee(employee._id)" mat-fab extended>
+            Delete
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</ng-template>
