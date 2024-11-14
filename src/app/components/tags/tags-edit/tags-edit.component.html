@@ -1,0 +1,34 @@
+<h2 class="text-center">Tags edit</h2>
+<div *ngIf="loading$ | async; else content" class="flex justify-center">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #content>
+  <div class="flex justify-center">
+    <mat-card class="max-w-[800px] w-[800px] p-5" appearance="outlined">
+      <mat-card-content>
+        <form [formGroup]="tagsForm" class="flex flex-col gap-3">
+
+          <mat-form-field appearance="fill" class="mb-4">
+            <mat-label>Tag</mat-label>
+            <input matInput [formControl]="tagControl" [matChipInputFor]="chipList"
+                   (matChipInputTokenEnd)="addTag()">
+            <mat-progress-bar *ngIf="loadingForm" mode="indeterminate"></mat-progress-bar>
+          </mat-form-field>
+
+          <mat-chip-grid #chipList>
+            <mat-chip [disabled]="loadingForm" *ngFor="let tag of tags.controls; let i = index" [removable]="true"
+                      (removed)="removeTag(i)">
+              {{ tag.value.name }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-grid>
+
+          <div class="flex gap-5 mt-8">
+            <button (click)="goBack()" mat-fab extended>Back</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-template>

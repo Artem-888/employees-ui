@@ -9,6 +9,7 @@ import {SharedModule} from './shared/shared.module';
 import {EmployeesModule} from './components/employees/employees.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
+import {TagsModule} from './components/tags/tags.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {RouterModule} from '@angular/router';
     EmployeesModule,
     BrowserAnimationsModule,
     RouterModule,
+    TagsModule,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient(withInterceptorsFromDi()),]
