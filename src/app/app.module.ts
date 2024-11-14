@@ -6,6 +6,7 @@ import {provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
 import {HeaderModule} from './app/header/header.module';
 import {FooterModule} from './app/footer/footer.module';
 import {SharedModule} from './shared/shared.module';
+import {EmployeesModule} from './components/employees/employees.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {SharedModule} from './shared/shared.module';
     HeaderModule,
     FooterModule,
     SharedModule,
+    EmployeesModule,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient(withInterceptorsFromDi()),]

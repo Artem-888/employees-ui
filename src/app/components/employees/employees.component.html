@@ -1,0 +1,18 @@
+<div class="flex justify-between items-center mb-5 flex-wrap">
+  <h3>Select an office</h3>
+  <div class="flex gap-5 items-center">
+    <button (click)="goAddEmployee('employee-create')" mat-fab extended>Add employee</button>
+    <button (click)="goAddEmployee('tags-edit')" mat-fab extended>Edit tags</button>
+  </div>
+
+</div>
+<mat-tab-group [(selectedIndex)]="selectedIndex" (selectedTabChange)="onTabChanged($event)" class="capitalize">
+  <mat-tab label="all"></mat-tab>
+  <mat-tab label="Riga"></mat-tab>
+  <mat-tab label="Tallinn"></mat-tab>
+  <mat-tab label="Vilnius"></mat-tab>
+</mat-tab-group>
+<div class="mt-5">
+  <router-outlet></router-outlet>
+</div>
+
