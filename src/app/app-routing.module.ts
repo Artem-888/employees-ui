@@ -7,6 +7,7 @@ import {
   EmployeeCreateOrEditFormComponent
 } from './components/employees/employee-create-or-edit-form/employee-create-or-edit-form.component';
 import {TagsEditComponent} from './components/tags/tags-edit/tags-edit.component';
+import {NoPageComponent} from './app/no-page/no-page.component';
 
 
 const routes: Routes = [
@@ -46,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NoPageComponent
+    component: NoPageComponent,
   },
 ];
 
