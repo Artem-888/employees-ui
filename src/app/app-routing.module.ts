@@ -6,6 +6,7 @@ import {EmployeeInfoComponent} from './components/employees/employee-info/employ
 import {
   EmployeeCreateOrEditFormComponent
 } from './components/employees/employee-create-or-edit-form/employee-create-or-edit-form.component';
+import {TagsEditComponent} from './components/tags/tags-edit/tags-edit.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,14 @@ const routes: Routes = [
   {
     path: 'employee-create',
     component: EmployeeCreateOrEditFormComponent,
+  },
+  {
+    path: 'tags-edit',
+    component: TagsEditComponent,
+  },
+  {
+    path: '**',
+    component: NoPageComponent
   },
 ];
 

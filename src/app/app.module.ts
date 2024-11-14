@@ -10,6 +10,7 @@ import {EmployeesModule} from './components/employees/employees.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {TagsModule} from './components/tags/tags.module';
+import {NoPageModule} from './app/no-page/no-page.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {TagsModule} from './components/tags/tags.module';
     BrowserAnimationsModule,
     RouterModule,
     TagsModule,
+    NoPageModule,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient(withInterceptorsFromDi()),]
