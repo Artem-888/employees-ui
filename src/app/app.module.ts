@@ -7,6 +7,8 @@ import {HeaderModule} from './app/header/header.module';
 import {FooterModule} from './app/footer/footer.module';
 import {SharedModule} from './shared/shared.module';
 import {EmployeesModule} from './components/employees/employees.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {EmployeesModule} from './components/employees/employees.module';
     FooterModule,
     SharedModule,
     EmployeesModule,
+    BrowserAnimationsModule,
+    RouterModule,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient(withInterceptorsFromDi()),]
