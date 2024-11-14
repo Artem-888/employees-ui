@@ -1,0 +1,24 @@
+.header-container {
+  background-image: url("/assets/bg/bg.jpeg");
+  background-repeat: repeat;
+  color: #ffffff;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.38);
+  justify-content: center;
+}
+
+.header-box {
+  max-width: 1300px;
+}
+
+.img-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  background: rgba(12, 12, 12, 0.27);
+  border-radius: 500%;
+}
+
+.logo-container {
+  min-width: 150px;
+  border-radius: 500%;
+}

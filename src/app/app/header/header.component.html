@@ -1,0 +1,12 @@
+<div class="flex justify-between header-container">
+  <div class="flex flex-row justify-between m-3 gap-3 w-full items-center header-box">
+    <a href="" class="logo-container">
+      <img src="/assets/logo/logo.png" alt="Logo" class="img-logo">
+    </a>
+    <div class="flex flex-wrap gap-10 basis-1/2 text-3xl">
+      @for (links of links; track links.name) {
+        <a class="nav-link" [href]="links.link">{{ links.name }}</a>
+      }
+    </div>
+  </div>
+</div>

@@ -1,1 +1,11 @@
-<p>Hello world</p>
+<div class="min-h-screen flex flex-col">
+  <app-header></app-header>
+
+  <div class="flex-1 flex justify-center">
+    <div class="max-w-[1300px] w-full px-4 m-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
