@@ -2,6 +2,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {EmployeesComponent} from './components/employees/employees.component';
 import {EmployeesListComponent} from './components/employees/employees-list/employees-list.component';
+import {EmployeeInfoComponent} from './components/employees/employee-info/employee-info.component';
+import {
+  EmployeeCreateOrEditFormComponent
+} from './components/employees/employee-create-or-edit-form/employee-create-or-edit-form.component';
 
 
 const routes: Routes = [
@@ -23,7 +27,18 @@ const routes: Routes = [
       },
     ],
   },
-
+  {
+    path: 'employee/:id',
+    component: EmployeeInfoComponent,
+  },
+  {
+    path: 'employee-edit/:id',
+    component: EmployeeCreateOrEditFormComponent,
+  },
+  {
+    path: 'employee-create',
+    component: EmployeeCreateOrEditFormComponent,
+  },
 ];
 
 @NgModule({
